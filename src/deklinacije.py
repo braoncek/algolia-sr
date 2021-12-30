@@ -79,12 +79,12 @@ def pridev(text):
         a.append(text+'om')  #instrumental j zr
     return a
 def deklinacije(lemma, pos):
+    pos = pos.upper()[:3]
     if pos=="NCM" : var=imenica_muskog_roda(lemma)
     elif pos=="NCF" : var=imenica_zenskog_roda_na_a(lemma)
     elif pos=="NCN" : var=imenica_srednjeg_roda(lemma)
     elif pos=="AGP" : var=pridev(lemma)
     elif pos=="AGC" : var=pridev(lemma)
     elif pos=="ASC" : var=pridev(lemma)
-    else:
-        return [lemma]
+    else: var=[lemma]
     return(var) 
